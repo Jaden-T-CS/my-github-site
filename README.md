@@ -15,5 +15,6 @@ My first GitHub project
 -one constraint when using Ai is to set a limit on how many questions you can ask AI a day to mitigate the amount of water we use to cool down AI
 
 ##Jaden T. :
+
 ##"What is one rule or constraint you think is most important when using AI tools for coding?"
 - One rule that I believe is most important when using AI tools for coding is that AI should not be used in a way that copies dierectly from another's code and plagarizes from it.
