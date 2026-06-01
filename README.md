@@ -10,6 +10,7 @@ My first GitHub project
 
 ##What I Want To Create
 - I want to create a web page to showcase my projects that I've done.
+
 ##Collaborator:Jayden R
 -one constraint when using Ai is to set a limit on how many questions you can ask AI a day to mitigate the amount of water we use to cool down AI
 
