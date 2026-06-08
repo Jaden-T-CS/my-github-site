@@ -3,20 +3,67 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Jaden]'s Website</title>
+    <title>Jaden's Website</title>
     <style>
-      body { font-family: Arial, sans-serif; max-width: 800px;
-             margin: 0 auto; padding: 20px; background: #f5f5f5; }
-      h1   { color: #1F4E79; }
-   h2   { color: #2E75B6; border-bottom: 2px solid #2E75B6; }
-      p    { line-height: 1.6; }
+      /* --- Default Light Theme Variables --- */
+      :root {
+        --bg-color: #f5f5f5;
+        --text-color: #333333;
+        --h1-color: #1F4E79;
+        --h2-color: #2E75B6;
+        --link-color: #0066cc;
+        --btn-bg: #1F4E79;
+        --btn-text: #ffffff;
+      }
+
+      /* --- Dark Theme Variables --- */
+      [data-theme="dark"] {
+        --bg-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --h1-color: #4A90E2;
+        --h2-color: #5CADFF;
+        --link-color: #ff9900;
+        --btn-bg: #e0e0e0;
+        --btn-text: #1a1a1a;
+      }
+
+      /* --- Page Styling --- */
+      body { 
+        font-family: Arial, sans-serif; 
+        max-width: 800px;
+        margin: 0 auto; 
+        padding: 20px; 
+        background: var(--bg-color); 
+        color: var(--text-color);
+        transition: background 0.3s, color 0.3s; /* Smooth transition when switching */
+      }
+      h1 { color: var(--h1-color); }
+      h2 { color: var(--h2-color); border-bottom: 2px solid var(--h2-color); }
+      p  { line-height: 1.6; }
+      a  { color: var(--link-color); }
+
+      /* --- Theme Button Styling --- */
+      .theme-toggle-btn {
+        padding: 10px 15px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: var(--btn-bg);
+        color: var(--btn-text);
+        float: right; /* Positions the button on the top right */
+      }
     </style>
   </head>
   <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle-btn" id="themeToggle">Switch to Dark Mode</button>
+
     <h1>Hi, I'm Jaden!</h1>
  
     <h2>About Me</h2>
-    <p>I am currently a student at Energy Tech Highschool and I want to persue a career in engineering.]</p>
+    <p>I am currently a student at Energy Tech Highschool and I want to pursue a career in engineering.</p>
  
     <h2>My Interests</h2>
     <p>I enjoy watching television, playing baseball, spending time with friends.</p>
@@ -26,7 +73,27 @@
  
     <h2>My GitHub</h2>
     <p>Check out my projects: 
-      <a href="https://github.com/Jaden-T-CS">Jaden-T-CS</a>
+      <a href="https://github.com/Jaden-T-CS" target="_blank">Jaden-T-CS</a>
     </p>
+
+    <!-- JavaScript for Theme Toggling -->
+    <script>
+      const toggleBtn = document.getElementById('themeToggle');
+      
+      toggleBtn.addEventListener('click', () => {
+        // Check current theme state
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        
+        if (currentTheme === 'dark') {
+          // Switch to Light Mode
+          document.documentElement.removeAttribute('data-theme');
+          toggleBtn.textContent = 'Switch to Dark Mode';
+        } else {
+          // Switch to Dark Mode
+          document.documentElement.setAttribute('data-theme', 'dark');
+          toggleBtn.textContent = 'Switch to Light Mode';
+        }
+      });
+    </script>
   </body>
 </html>
